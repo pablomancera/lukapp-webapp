@@ -1,0 +1,20 @@
+<mat-toolbar color="primary" id="main-toolbar">
+    <button mat-icon-button (click)="drawer.toggle()" class="toolbar-icon">
+     <mat-icon>menu</mat-icon>
+   </button>
+    <a routerLink="/dashboard"><span>Lukapp</span></a>
+</mat-toolbar>
+
+<mat-drawer-container class="main-container" autosize>
+    <mat-drawer #drawer class="main-sidenav" mode="side">
+      <p>Auto-resizing sidenav</p>
+      <p *ngIf="showFiller">Lorem, ipsum dolor sit amet consectetur.</p>
+      <button (click)="showFiller = !showFiller" mat-raised-button>
+        Toggle extra text
+      </button>
+    </mat-drawer>
+  
+    <router-outlet></router-outlet>
+  
+  </mat-drawer-container>
+  

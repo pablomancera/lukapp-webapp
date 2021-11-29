@@ -1,0 +1,28 @@
+button {
+    background-color: transparent;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    outline: none;
+}
+
+.toolbar-icon {
+    color: white;
+}
+
+.main-container {
+    height: 100%;
+}
+
+#main-toolbar {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+  display: block;
+}

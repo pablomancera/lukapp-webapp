@@ -143,14 +143,3 @@ export class List<T> {
 		return this.head ? false : true;
 	}
 }
-
-let list = new List<Number>();
-
-for (let i = 0; i <= 10; i++) {
-	list.pushBack(i);
-}
-list.addAfter(0, 99);
-list.addAfter(11, 99);
-for (let i = 0; i <= 12; i++) {
-	console.log(list.get(i));
-}
