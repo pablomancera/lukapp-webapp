@@ -7,11 +7,10 @@
 
 <mat-drawer-container class="main-container" autosize>
     <mat-drawer #drawer class="main-sidenav" mode="side">
-      <p>Auto-resizing sidenav</p>
-      <p *ngIf="showFiller">Lorem, ipsum dolor sit amet consectetur.</p>
-      <button (click)="showFiller = !showFiller" mat-raised-button>
-        Toggle extra text
-      </button>
+        <mat-nav-list>
+            <a routerLink="dashboard" matRipple style="vertical-align: middle;"><mat-icon>dashboard</mat-icon>  Dashboard</a>
+            <a routerLink="expenses" matRipple>Expenses</a>
+        </mat-nav-list>
     </mat-drawer>
   
     <router-outlet></router-outlet>

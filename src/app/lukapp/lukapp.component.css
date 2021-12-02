@@ -21,6 +21,11 @@ button {
     z-index: 2;
 }
 
+mat-nav-list > a {
+    display: block;
+    padding: 20px 75px;
+}
+
 a {
   color: white;
   text-decoration: none;

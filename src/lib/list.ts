@@ -63,7 +63,7 @@ export class List<T> {
 		if (this.head === this.tail) {
 			this.head = this.tail = null;
 		} else {
-			this.tail = this.tail!.next
+			this.tail = this.tail!.prev
 			this.tail!.next = null;
 		}	
 	}
@@ -143,3 +143,76 @@ export class List<T> {
 		return this.head ? false : true;
 	}
 }
+
+let list = new List<number>();
+
+let startTime = performance.now();
+for (let i = 0; i <= 10000; i++) {
+	list.pushBack(i);
+}
+let endTime = performance.now();
+
+console.log("adding (List pushBack) 10.000 expenses took " + (endTime-startTime) + "milliseconds");
+
+let max = list.topBack()!.key;
+
+startTime = performance.now();
+for (let i = 0; i <= 100000; i++) {
+	list.pushBack(max + i);
+}
+endTime = performance.now();
+
+console.log("adding (List pushBack) 100.000 expenses took " + (endTime-startTime) + " milliseconds");
+
+max = list.topBack()!.key;
+
+startTime = performance.now();
+for (let i = 0; i <= 1000000; i++) {
+	list.pushBack(max + i);
+}
+endTime = performance.now();
+
+console.log("adding (List pushBack) 1'000.000 expenses took " + (endTime-startTime) + " milliseconds");
+
+startTime = performance.now();
+for (let i = 0; i < 10000; i++) {
+	list.pushFront(max + i);
+}
+endTime = performance.now();
+
+console.log("\nadding (List pushFront) 10.000 expenses took " + (endTime-startTime) + " milliseconds");
+
+startTime = performance.now();
+for (let i = 0; i < 100000; i++) {
+	list.pushFront(max + i);
+}
+endTime = performance.now();
+
+console.log("adding (List pushFront) 100.000 expenses took " + (endTime-startTime) + " milliseconds");
+
+
+startTime = performance.now();
+for (let i = 0; i < 1000000; i++) {
+	list.pushFront(max + i);
+}
+endTime = performance.now();
+
+console.log("adding (List pushFront) 1'000.000 expenses took " + (endTime-startTime) + " milliseconds");
+
+max = list.topBack()!.key;
+console.log("\nLooking for number " + max + " in list (list findKey)");
+startTime = performance.now();
+if (list.findKey(max)) {
+	endTime = performance.now();
+	console.log("Found, took " + (endTime-startTime) + " milliseconds");
+} else {
+	endTime = performance.now();
+	console.log("Not found, took " + (endTime-startTime) + " milliseconds");
+}
+
+startTime = performance.now();
+while (!list.isEmpty()) {
+	list.popBack();
+}
+endTime = performance.now();
+console.log("\nDeleted every list's node one by one (list pushBack), took " + (endTime-startTime) + " milliseconds");
