@@ -13,9 +13,10 @@ import {MatRippleModule} from '@angular/material/core';
 import { LukappComponent } from './lukapp/lukapp.component';
 import { LukappDashboardComponent } from './lukapp-dashboard/lukapp-dashboard.component';
 import { LukappExpensesComponent } from './lukapp-expenses/lukapp-expenses.component';
+import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 
 @NgModule({
-  declarations: [AppComponent, LukappComponent, LukappDashboardComponent, LukappExpensesComponent],
+  declarations: [AppComponent, LukappComponent, LukappDashboardComponent, LukappExpensesComponent, HeroDetailComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
